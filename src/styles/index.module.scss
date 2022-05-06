@@ -1,0 +1,24 @@
+.title {
+  font-size: 24px;
+}
+
+.explanation {
+  font-size: 16px;
+  color: #333;
+}
+
+.menu {
+  margin-left: 12px;
+  li {
+
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    margin: 24px 0;
+
+    p {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+}
