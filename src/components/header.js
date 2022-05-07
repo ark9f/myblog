@@ -2,7 +2,6 @@ import Link from 'next/link'
 import styles from '../styles/header.module.scss'
 import React, {useState} from 'react'
 
-
 const Header = (props) => {
 
   const [isOpen, setIsOpen] = useState(false)
@@ -16,15 +15,15 @@ const Header = (props) => {
           codelog
           </a>
         </Link>
-        <button onClick={()=>setIsOpen(!isOpen)}>push</button>
-        <ul
-          className={(isOpen ? styles.open : styles.close)}
-        >
-          <Link href="/"><a>Home</a></Link>
-          <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/"><a>Work</a></Link>
-          <Link href="/"><a>Contact</a></Link>
-        </ul>
+        <nav>
+          <ul className={(isOpen ? styles.open : styles.close)}>
+            <li><Link href="/"><a>Home</a></Link></li>
+            <li><Link href="/blog"><a>Blog</a></Link></li>
+            <li><Link href="/work"><a>Work</a></Link></li>
+            <li><Link href="/contact"><a>Contact</a></Link></li>
+          </ul>
+          <button onClick={()=>setIsOpen(!isOpen)}>push</button>
+        </nav>
       </header>
     )
   } else {

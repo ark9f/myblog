@@ -13,7 +13,7 @@ const Blog = (props) => {
       <div className={styles.post} key={index}>
         <h3>{blog.frontmatter.title}</h3>
         <p>{blog.frontmatter.excerpt}</p>
-        <p>{blog.frontmatter.date}</p>
+        <time datetime={blog.frontmatter.date}>{blog.frontmatter.date}</time>
         <Link href={`/blog/${blog.slug}`}><a>Read</a></Link>
       </div>
     )}
