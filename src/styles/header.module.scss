@@ -5,16 +5,50 @@
 }
 
 .headerSmall {
+  background-color: #111110;
 
+  position: fixed;
+  top: 0;
   height: 48px;
-  background-color: #8673CF;
   display: flex;
   flex-direction: row;
+  gap: 8px;
   align-items: center;
   justify-content: left;
 }
 
+.headerMenu {
+
+  &.close {
+    display: none;
+  }
+
+  color: #999;
+  top: 48px;
+  background-color: #333;
+
+  position: absolute;
+  top: 38px;
+  left: 80px;
+
+  padding: 4px 0;
+  border-radius: 8px;
+
+  li {
+    padding: 4px 28px;
+    list-style: none;
+    margin: 0 4px;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #4622D4;
+    }
+  }
+
+}
+
 .headerIcon {
+
   display: inline-block;
   background: linear-gradient(119deg, #4622D4, #6248C9, #8673CF, #8C14CD);
   background-size: 800% 800%;
@@ -33,7 +67,22 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-bottom: 24px;
+}
+
+.headerMenuButton {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  transform: rotate(0);
+  transition: transform .1s;
+  opacity: 0.6;
+}
+
+.headerMenuButton.open {
+  transform: rotate(180deg);
 }
 
 @keyframes GradientBackground {
@@ -56,12 +105,6 @@
   cursor: pointer;
 }
 
-.open {
-  position: relative;
-  top: 48px;
-  background-color: rgba($color: #000000, $alpha: 0.5);
-}
-
-.close {
-  display: none;
+.gap {
+  height: 72px;
 }

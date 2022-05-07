@@ -1,35 +1,41 @@
 import Link from 'next/link'
 import styles from '../styles/header.module.scss'
 import React, {useState} from 'react'
-
+import {BiChevronDown} from 'react-icons/bi'
 const Header = (props) => {
 
   const [isOpen, setIsOpen] = useState(false)
 
   if(props.headerType == 's') {
     return (
+      <>
       <header className={styles.headerSmall}>
+        <span className={styles.headerSmallIcon}></span>
         <Link href="/">
           <a>
-          <span className={styles.headerSmallIcon}></span>
-          codelog
+          My code log
           </a>
         </Link>
-        <nav>
-          <ul className={(isOpen ? styles.open : styles.close)}>
+        <nav className={styles.headerMenu + ' ' + (isOpen ? styles.open : styles.close)}>
+          <ul>
             <li><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/blog"><a>Blog</a></Link></li>
             <li><Link href="/work"><a>Work</a></Link></li>
             <li><Link href="/contact"><a>Contact</a></Link></li>
           </ul>
-          <button onClick={()=>setIsOpen(!isOpen)}>push</button>
         </nav>
+        <BiChevronDown
+          className={styles.headerMenuButton + ' ' + (isOpen ? styles.open : styles.close)}
+          onClick={()=>setIsOpen(!isOpen)}
+        />
       </header>
+      <div className={styles.gap}></div>
+      </>
     )
   } else {
     return (
       <header className={styles.header}>
-        <Link href="/"><a>L<span className={styles.headerIcon}></span></a></Link>
+        <Link href="/"><a><span className={styles.headerIcon}></span></a></Link>
       </header>
     )
   }
