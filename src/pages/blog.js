@@ -1,14 +1,18 @@
 import Link from "next/link"
 import matter from "gray-matter"
+
 import Layout from "../components/layout"
+
+import styles from "../styles/blog.module.scss"
 
 const Blog = (props) => {
   return (
-    <Layout>
+    <Layout headerType='s'>
     <h1>blog</h1>
     {props.blogs.map((blog, index) =>
-      <div key={index}>
+      <div className={styles.post} key={index}>
         <h3>{blog.frontmatter.title}</h3>
+        <p>{blog.frontmatter.excerpt}</p>
         <p>{blog.frontmatter.date}</p>
         <Link href={`/blog/${blog.slug}`}><a>Read</a></Link>
       </div>

@@ -1,10 +1,10 @@
 import Header from "./header";
 import Footer from "./footer";
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <div className="container">
-    <Header />
+    <Header headerType={props.headerType} />
     <main className="main">{props.children}</main>
     <Footer />
     </ div>
