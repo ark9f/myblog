@@ -8,13 +8,12 @@ import styles from "../styles/blog.module.scss"
 const Blog = (props) => {
   return (
     <Layout headerType='s'>
-    <h1>blog</h1>
+    <h1 className={styles.title}>Blog</h1>
     {props.blogs.map((blog, index) =>
       <div className={styles.post} key={index}>
-        <h3>{blog.frontmatter.title}</h3>
-        <p>{blog.frontmatter.excerpt}</p>
         <time datetime={blog.frontmatter.date}>{blog.frontmatter.date}</time>
-        <Link href={`/blog/${blog.slug}`}><a>Read</a></Link>
+        <Link href={`/blog/${blog.slug}`}><a><h3>{blog.frontmatter.title}</h3></a></Link>
+        <p>{blog.frontmatter.excerpt}</p>
       </div>
     )}
     </ Layout>

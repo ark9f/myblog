@@ -1,13 +1,18 @@
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
+
 import Layout from "../../components/layout"
 
 const Article = (props) => {
   return (
-    <Layout>
-    <h1>{props.frontmatter.title}</h1>
-    <p>{props.frontmatter.date}</p>
-    <ReactMarkdown>{props.body}</ReactMarkdown>
+    <Layout headerType="s">
+      <body>
+        <h1>{props.frontmatter.title}</h1>
+        <p>{props.frontmatter.date}</p>
+        <ReactMarkdown>
+          {props.body}
+        </ReactMarkdown>
+      </body>
     </ Layout>
   )
 }

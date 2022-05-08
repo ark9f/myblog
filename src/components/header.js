@@ -13,7 +13,7 @@ const Header = (props) => {
         <span className={styles.headerSmallIcon}></span>
         <Link href="/">
           <a>
-          My code log
+          codilog
           </a>
         </Link>
         <nav className={styles.headerMenu + ' ' + (isOpen ? styles.open : styles.close)}>
