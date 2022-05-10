@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 const Index = () => {
   return (
     <Layout>
-      <h1 className={style.title}>codilla</h1>
+      <h1 className={style.title}>Codilla</h1>
       <h2 className={style.explanation}>A personal blog about web development, etc.</h2>
       <ul className={style.menu}>
         <li>

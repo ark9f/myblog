@@ -2,9 +2,13 @@ import Link from 'next/link'
 import styles from '../styles/header.module.scss'
 import React, {useState} from 'react'
 import {BiChevronDown} from 'react-icons/bi'
-const Header = (props) => {
+import { useRouter } from 'next/router'
 
+
+const Header = (props) => {
+  
   const [isOpen, setIsOpen] = useState(false)
+  const path = useRouter()
 
   if(props.headerType == 's') {
     return (
@@ -13,9 +17,10 @@ const Header = (props) => {
         <span className={styles.headerSmallIcon}></span>
         <Link href="/">
           <a>
-          codilog
+          Codilla
           </a>
         </Link>
+        <p>{path.pathname}</p>
         <nav className={styles.headerMenu + ' ' + (isOpen ? styles.open : styles.close)}>
           <ul>
             <li><Link href="/"><a>Home</a></Link></li>
