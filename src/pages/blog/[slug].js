@@ -1,17 +1,26 @@
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
-
+import Link from "next/link"
+import { FiArrowLeft } from "react-icons/fi"
 import Layout from "../../components/layout"
+
+import styles from "../../styles/slug.module.scss"
 
 const Article = (props) => {
   return (
     <Layout headerType="s">
+      <Link href="/blog">
+        <a className={styles.back}>
+          <FiArrowLeft/>
+          記事一覧
+        </a>
+      </Link>
       <body>
-        <h1>{props.frontmatter.title}</h1>
         <p>{props.frontmatter.date}</p>
-        <ReactMarkdown>
-          {props.body}
-        </ReactMarkdown>
+        <h1 className={styles.title}>{props.frontmatter.title}</h1>
+        <div className={styles['markdown-body']}>
+          <ReactMarkdown children={props.body}/>
+        </div>
       </body>
     </ Layout>
   )

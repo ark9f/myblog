@@ -7,17 +7,15 @@ excerpt: "Next.jsのSSG機能を利用したブログを作成した際感じた
 ---
 
 # 使用した技術
-- Next.js
+- Next.js  
+react-markdownを利用し、マークダウンファイルから記事を作成する方法を採用しました。
 
 # デザイン
-シンプルかつ見やすくて垢抜けたデザインを目指しました。
-主に他の技術ブログ様を参考にさせていただきつつAdobeXDでざっくりワイヤーフレームを作った後、1からCSSを書きながら微調整していき、最終的にはだいぶ違ったデザインに着陸しました。
-勉強も兼ねてTailwindCSSを利用しようかとも考えましたが、自分でCSSを打ってしまう方が慣れているので、今後の機会に譲ることとしました。
-
-# Next.jsを触ってみて
-Reactが分かっていればほとんど学習コストは掛からない
-
-github[https://github.com/sindresorhus/github-markdown-css]
+シンプルかつ見やすくて垢抜けたデザインを目指しました。  
+主に他の技術ブログ様を参考にさせていただきつつAdobeXDでざっくりワイヤーフレームを作った後、1からCSSを書きながら微調整していき、最終的にはだいぶ違ったデザインに着陸しました。  
+マークダウンファイルから作成した記事には
+[github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
+を少しカスタマイズして適用しました。  
 
 ```javascript
 export async function getStaticPaths() {
