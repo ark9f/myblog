@@ -9,12 +9,14 @@ import styles from "../../styles/slug.module.scss"
 const Article = (props) => {
   return (
     <Layout headerType="s">
-      <Link href="/blog">
-        <a className={styles.back}>
-          <FiArrowLeft/>
-          記事一覧
-        </a>
-      </Link>
+
+      <div className={styles.back}>
+        <FiArrowLeft/>
+        <Link href="/blog">
+          <a>記事一覧</a>
+        </Link>
+      </div>
+  
       <body>
         <p>{props.frontmatter.date}</p>
         <h1 className={styles.title}>{props.frontmatter.title}</h1>
