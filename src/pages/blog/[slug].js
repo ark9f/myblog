@@ -4,8 +4,22 @@ import { FiArrowLeft } from "react-icons/fi"
 import Layout from "../../components/layout"
 import styles from "../../styles/slug.module.scss"
 import { getBlogSlugs, getBlogBySlug } from "../../libs/api"
+import Image from "next/image"
 
 const Article = (props) => {
+
+  const Img = ({ alt, src }) => {
+    return (
+      <Image
+        width={360}
+        height={240}
+        layout="responsive"
+        objectFit="contain"
+        src={src}
+        alt={alt}
+      />
+    )
+  }
 
   const {
     title,
@@ -27,7 +41,10 @@ const Article = (props) => {
       <p>{date}</p>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles['markdown-body']}>
-        <ReactMarkdown children={body}/>
+        <ReactMarkdown
+          components={{ img: Img }}
+          children={body}
+        />
       </div>
     </ Layout>
   )

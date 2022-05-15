@@ -1,5 +1,4 @@
 import Link from "next/link"
-import matter from "gray-matter"
 
 import Layout from "../components/layout"
 
