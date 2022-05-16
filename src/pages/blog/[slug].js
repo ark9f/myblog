@@ -5,6 +5,8 @@ import Layout from "../../components/layout"
 import styles from "../../styles/slug.module.scss"
 import { getBlogSlugs, getBlogBySlug } from "../../libs/api"
 import Image from "next/image"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 const Article = (props) => {
 
@@ -18,6 +20,22 @@ const Article = (props) => {
         src={src}
         alt={alt}
       />
+    )
+  }
+
+  const Code = ({className, children}) => {
+    const match = /language-(\w+)(:\/*.+)/.exec(className || '');
+
+    return (
+      <>
+      <p>{match[2].slice(1)}</p>
+      <SyntaxHighlighter
+        style={darcula}
+        language={match[1]}
+        children={String(children).replace(/\n$/, '')}
+      />
+      </>
+
     )
   }
 
@@ -42,7 +60,10 @@ const Article = (props) => {
       <h2 className={styles.title}>{title}</h2>
       <div className={styles['markdown-body']}>
         <ReactMarkdown
-          components={{ img: Img }}
+          components={{
+            img: Img,
+            code: Code,
+          }}
           children={body}
         />
       </div>
