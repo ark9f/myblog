@@ -1,6 +1,11 @@
+import Layout from "../components/layout"
+import styles from "../styles/contact.module.scss"
+
 const Contact = () => {
   return (
-    <h1>contact</h1>
+  <Layout headerType="s">
+    <h1 className={styles.title}>Contact</h1>
+  </Layout>
   )
 }
 

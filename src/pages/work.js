@@ -1,6 +1,11 @@
+import Layout from "../components/layout"
+import styles from "../styles/work.module.scss"
+
 const Work = () => {
   return (
-    <h1>Work</h1>
+  <Layout headerType="s">
+    <h1 className={styles.title}>Work</h1>
+  </Layout>
   )
 }
 

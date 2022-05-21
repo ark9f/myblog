@@ -1,7 +1,7 @@
+@import "variables.scss";
+
 .title {
-  padding-bottom: 24px;
-  border-bottom: 1px solid #333;
-  margin-bottom: 24px;
+  @extend %page-title;
 }
 
 .post {
