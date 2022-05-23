@@ -3,3 +3,36 @@
 .title {
   @extend %page-title;
 }
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.itemName {
+  font-size: 18px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #777;
+
+  &:hover {
+    color: #777;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+
+  small {
+    opacity: 0.6;
+  }
+
+  &>p {
+    font-size: 14px;
+  }
+}
