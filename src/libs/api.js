@@ -4,6 +4,7 @@ import matter from "gray-matter"
 
 const contentDir = join(process.cwd(), 'content')
 const blogDir = join(contentDir, 'blog')
+const workDir = join(contentDir, 'work')
 
 export const getBlogSlugs = () => {
 
@@ -45,6 +46,44 @@ export const getAllBlogs = () => {
   return {
     props: {
       blogs: descBlogs
+    }
+  }
+}
+
+export const getAllWorkDir = () => {
+  const allDir = fs.readdirSync(workDir, {withFileTypes: true})
+
+    return allDir
+      .filter((dirent) => dirent.isDirectory())
+      .map(({ name }) => name)
+}
+
+export const getWork = ( name ) => {
+
+  const path = join(workDir, name, 'index.md')
+  const file = fs.readFileSync(path, 'utf-8')
+  const { data, content } = matter(file)
+
+  return {
+    props: {
+      frontmatter: data,
+      body: content,
+    }
+  }
+}
+
+export const getAllWorks = () => {
+  const dir = getAllWorkDir()
+  const works = dir.map((d) => {
+    const work = getWork(d)
+    return {
+      frontmatter: work.props.frontmatter
+    }
+  })
+
+  return {
+    props: {
+      works: works
     }
   }
 }

@@ -1,9 +1,6 @@
 import Link from "next/link"
-
 import Layout from "../components/layout"
-
 import styles from "../styles/blog.module.scss"
-
 import { getAllBlogs } from "../libs/api"
 
 const Blog = (props) => {
