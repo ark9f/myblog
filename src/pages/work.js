@@ -11,13 +11,13 @@ const Work = (props) => {
 
     {props.works.map((work, index) =>
       <div className={styles.item} key={index}>
-        <Image
-          width={180}
-          height={120}
-          layout="fixed"
-          objectFit="contain"
-          src={work.frontmatter.image}
-        />
+        <div className={styles.image}>
+          <Image
+            layout="fill"
+            objectFit="contain"
+            src={work.frontmatter.image}
+          />
+        </div>
 
         <div className={styles.meta}>
           <h2>
@@ -26,10 +26,20 @@ const Work = (props) => {
             <FiArrowUpRight/>
             </a>
           </h2>
-          <small>
+
+          <div className={styles.metaSub}>
+            <small>制作時期：</small>
+            <p>{work.frontmatter.date}</p>
+          </div>
+
+          <div className={styles.metaSub}>
+            <small>主な使用技術：</small>
             <p>{work.frontmatter.stack}</p>
-          </small>
-          <p>{work.frontmatter.excerpt}</p>
+          </div>
+
+          <p className={styles.body}>
+            {work.body}
+          </p>
         </div>
       </div>
     )}

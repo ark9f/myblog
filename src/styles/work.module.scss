@@ -27,6 +27,7 @@
   flex-direction: column;
   gap: 4px;
   padding: 8px 0;
+  width: 100%;
 
   small {
     opacity: 0.6;
@@ -35,4 +36,22 @@
   &>p {
     font-size: 14px;
   }
+}
+
+.metaSub {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image {
+  position: relative;
+  width: 180px;
+  height: 120px;
+}
+
+.body {
+  position: relative;
+  max-width: 100%;
 }

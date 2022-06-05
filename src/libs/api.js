@@ -77,7 +77,8 @@ export const getAllWorks = () => {
   const works = dir.map((d) => {
     const work = getWork(d)
     return {
-      frontmatter: work.props.frontmatter
+      frontmatter: work.props.frontmatter,
+      body: work.props.body
     }
   })
 
