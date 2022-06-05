@@ -1,10 +1,12 @@
 import style from "../styles/index.module.scss"
 import Link from 'next/link'
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const Index = () => {
   return (
     <Layout>
+      <Seo title="top" description="top"/>
       <h1 className={style.title}>Codilla</h1>
       <h2 className={style.explanation}>A personal blog about web development, etc.</h2>
       <ul className={style.menu}>
