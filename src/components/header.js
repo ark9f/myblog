@@ -3,7 +3,7 @@ import styles from '../styles/header.module.scss'
 import React, {useState} from 'react'
 import {BiChevronDown} from 'react-icons/bi'
 import { useRouter } from 'next/router'
-
+import { metadata } from '../../siteConfig'
 
 const Header = (props) => {
   
@@ -17,7 +17,7 @@ const Header = (props) => {
         <span className={styles.headerSmallIcon}></span>
         <Link href="/">
           <a>
-          Codilla
+          {metadata.title}
           </a>
         </Link>
         <p>{path.pathname}</p>
