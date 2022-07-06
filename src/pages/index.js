@@ -16,20 +16,20 @@ const Index = () => {
       </h2>
       <ul className={style.menu}>
         <li>
+          <Link href="/about"><a>About</a></Link>
+          <p>about me</p>
+        </li>
+        <li>
           <Link href="/blog"><a>Blog</a></Link>
           <p>Mainly about web development.</p>
         </li>
         <li>
-          <Link href="/contact"><a>Work</a></Link>
-          <p>my works</p>
-        </li>
-        <li>
-          <Link href="/contact"><a>About</a></Link>
-          <p>about me</p>
-        </li>
-        <li>
           <Link href="/contact"><a>Contact</a></Link>
           <p>You can contact me by email.</p>
+        </li>
+        <li>
+          <Link href="/work"><a>Work</a></Link>
+          <p>my works</p>
         </li>
       </ul>
     </Layout>
