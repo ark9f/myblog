@@ -5,6 +5,7 @@ import matter from "gray-matter"
 const contentDir = join(process.cwd(), 'content')
 const blogDir = join(contentDir, 'blog')
 const workDir = join(contentDir, 'work')
+const aboutDir = join(contentDir, 'about')
 
 export const getBlogSlugs = () => {
 
@@ -85,6 +86,18 @@ export const getAllWorks = () => {
   return {
     props: {
       works: works
+    }
+  }
+}
+
+export const getAbout = () => {
+  const path = join(aboutDir, 'index.md')
+  const file = fs.readFileSync(path, 'utf-8')
+  const { content } = matter(file)
+
+  return {
+    props: {
+      body: content,
     }
   }
 }

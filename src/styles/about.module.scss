@@ -1,0 +1,17 @@
+@import "variables";
+
+.title {
+  @extend %page-title;
+}
+
+.body {
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 1.2em;
+  }
+}
